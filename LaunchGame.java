@@ -147,9 +147,13 @@ public class LaunchGame {
 		
 		System.out.println("Choose options 1 or 2, option1 is for 2 players and option2 is for 1 player & computer");
 		int choose = scanner.nextInt();
+		scanner.nextLine();
 		
 		if(choose == 1) {
-			
+			System.out.println("Enter player1 Name: ");
+			String Player1 = scanner.nextLine();
+			System.out.println("Enter Player2 Name: ");
+			String Player2 = scanner.nextLine();
 			Player p1 = new Player("Player1" , 'X');
 			Player p2 = new Player("Player2" , 'O');
 			
@@ -178,8 +182,10 @@ public class LaunchGame {
 				}
 			}
 		}
-		else {
-			Player p1 = new Player("Player" , 'X');
+		else if(choose == 2){
+			System.out.println("Enter the Player's Name: ");
+			String Player1 = scanner.nextLine();
+			Player p1 = new Player("Player1" , 'X');
 			Computer p2 = new Computer("AI" , 'O');
 			
 			ParentPlayer cp;
@@ -206,6 +212,9 @@ public class LaunchGame {
 					}
 				}
 			}
+		}
+		else {
+			System.out.println("Invalid mode of Selection");
 		}
 	}
 
